@@ -26,7 +26,7 @@ var coffee = {
     hot: true,
     size: CoffeeSize.TALL
 };
-console.log(CoffeeSize.SHORT);
+// console.log(CoffeeSize.SHORT)
 // any
 var anything = true;
 anything = 'hello';
@@ -45,6 +45,29 @@ function add(num1, num2) {
 }
 // void
 function sayHello() {
-    console.log('Hello');
+    // console.log('Hello')
 }
-console.log(sayHello());
+// コールバック関数
+function doubleAndHandle(num, cb) {
+    var doubleNum = cb(num * 2);
+    // console.log(doubleNum);
+}
+doubleAndHandle(21, function (doubleNum) {
+    return doubleNum;
+});
+// unknown
+var unknownInput;
+var anyInput;
+var text;
+unknownInput = 'hello';
+unknownInput = 21;
+unknownInput = true;
+text = anyInput;
+if (typeof unknownInput === 'string') {
+    text = unknownInput;
+}
+// never
+function error(message) {
+    throw new Error(message);
+}
+console.log(error('error'));

@@ -1,3 +1,4 @@
+
 let hasValue: boolean = false;
 
 let count: number = 10;
@@ -36,7 +37,7 @@ const coffee = {
   size: CoffeeSize.TALL
 }
 
-console.log(CoffeeSize.SHORT)
+// console.log(CoffeeSize.SHORT)
 
 // any
 let anything: any = true
@@ -67,6 +68,35 @@ function add(num1: number, num2: number): number {
 
 // void
 function sayHello(): void {
-  console.log('Hello')
+  // console.log('Hello')
 }
-console.log(sayHello())
+
+
+// コールバック関数
+function doubleAndHandle(num: number, cb: (num: number) => number): void {
+  const doubleNum = cb(num * 2)
+  // console.log(doubleNum);
+}
+doubleAndHandle(21, doubleNum => {
+  return doubleNum
+})
+
+// unknown
+let unknownInput: unknown;
+let anyInput: any;
+let text: string;
+
+unknownInput = 'hello';  
+unknownInput = 21;  
+unknownInput = true;  
+text = anyInput
+
+if (typeof unknownInput === 'string') {
+  text = unknownInput;
+}
+
+// never
+function error(message: string){
+  // throw new Error(message)
+}
+console.log(error('error'))
