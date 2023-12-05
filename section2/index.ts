@@ -59,3 +59,14 @@ const apple: 'apple' = 'apple'
 type ClothSize = 'small' | 'medium' | 'large'
 
 let clothSize: ClothSize = 'large';
+
+// 関数
+function add(num1: number, num2: number): number {
+  return num1 + num2
+}
+
+// void
+function sayHello(): void {
+  console.log('Hello')
+}
+console.log(sayHello())

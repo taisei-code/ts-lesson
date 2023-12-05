@@ -39,3 +39,12 @@ var unionTypes = [21, 'hello'];
 // Literal
 var apple = 'apple';
 var clothSize = 'large';
+// 関数
+function add(num1, num2) {
+    return num1 + num2;
+}
+// void
+function sayHello() {
+    console.log('Hello');
+}
+console.log(sayHello());
