@@ -6,19 +6,19 @@ class Person {
   }
 
   // メソット
-  greeting(this: { name: string }) {
+  greeting(this: Person) {
     console.log(`Hello My name is ${this.name}`)
   }
 
 }
 
-// オブジェクト生成
+// インスタンス（オブジェクト）生成
 const quill = new Person('Quill');
 quill.greeting()
 
 const anotherQuill = {
-  name: "anotherTaisei"
-  anotherGreeting: quill.greeting
+  name: "anotherTaisei",
+  greeting: quill.greeting
 }
 
-anotherQuill.anotherGreeting()
+anotherQuill.greeting()
