@@ -12,7 +12,23 @@ class Person {
         console.log(`Hello My name is ${this.name}. I am ${this.age} years old`);
     }
 }
-// インスタンス（オブジェクト）生成
-const quill = new Person('Quill', 38);
-quill.incrementAge();
-quill.greeting();
+class Teacher extends Person {
+    get subject() {
+        if (!this._subject) {
+            throw new Error('There is no subject.');
+        }
+        return this._subject;
+    }
+    set subject(value) {
+    }
+    constructor(name, age, _subject) {
+        super(name, age);
+        this._subject = _subject;
+    }
+    greeting() {
+        console.log(`Hello My name is ${this.name}. I am ${this.age} years old. I teach ${this.subject}`);
+    }
+}
+const teacher = new Teacher('Taisei', 27, '');
+console.log(teacher.subject);
+teacher.greeting();

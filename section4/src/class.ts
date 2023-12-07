@@ -1,6 +1,6 @@
 class Person {
   
-  constructor(public name: string, private age: number) {
+  constructor(public readonly name: string, protected age: number) {
   }
 
   // メソット
@@ -14,8 +14,28 @@ class Person {
 
 }
 
-// インスタンス（オブジェクト）生成
-const quill = new Person('Quill', 38);
-quill.incrementAge()
-quill.greeting()
+class Teacher extends Person {
+
+  get subject() {
+    if (!this._subject) {
+      throw new Error('There is no subject.');
+    }
+    return this._subject;
+  }
+
+  set subject(value) {
+
+  }
+
+  constructor(name: string, age: number, private _subject: string) {
+    super(name, age);
+  }
+
+  greeting() {
+    console.log(`Hello My name is ${this.name}. I am ${this.age} years old. I teach ${this.subject}`);
+  }
+}
+const teacher = new Teacher('Taisei', 27, '');
+console.log(teacher.subject)
+teacher.greeting();
 
